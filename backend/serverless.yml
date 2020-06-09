@@ -5,7 +5,7 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: eu-west-1
-  profile: cs-deploy-serverless
+  profile: default
 
 functions:
   hello:
@@ -23,14 +23,11 @@ functions:
           method: get
 
   list:
-    handler: function/list.handle
+    handler: functions/list.handle
     events:
       - http:
           path: list
           method: get
-          cors:
-            origin: http://localhost:3000
-            allowCredentials: true
 
 custom:
   stageVars: ${file(./stage.${self:provider.stage}.yml)}
