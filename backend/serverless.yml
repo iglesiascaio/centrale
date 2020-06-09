@@ -15,5 +15,12 @@ functions:
           path: hello
           method: get
 
+  goodbye:
+    handler: functions/goodbye.handle
+    events:
+      - http:
+          path: goodbye
+          method: get
+
 custom:
   stageVars: ${file(./stage.${self:provider.stage}.yml)}

@@ -16,7 +16,7 @@ const HomePage = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn Matheus
         </a>
       </header>
     </div>
