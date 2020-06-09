@@ -3,8 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage2 from "./components/HomePage2";
 import Login from "./components/Login"
 import { useHistory } from 'react-router-dom';
+import axios from "axios"
+
 
 function App2() {
+
 
   const [user, setUser] = useState({
     username_aux: -1,
