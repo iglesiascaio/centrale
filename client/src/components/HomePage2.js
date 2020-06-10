@@ -5,6 +5,7 @@ import axios from "axios"
 import Results from './Results'
 import Login from "./Login"
 import Popup from "./Popup"
+import Recommendation from "./Recommendation"
 
 function HomePage2() {
   const [state, setState] = useState({
@@ -77,6 +78,8 @@ function HomePage2() {
         <Search handleInput= {handleInput}  search= {search}/>
 
         <Results results={state.results} openPopup={openPopup} />
+
+        <Recommendation />
 
         {(typeof state.selected.Title != "undefined")
         ? <Popup selected = {state.selected} closePopup={closePopup}/>
