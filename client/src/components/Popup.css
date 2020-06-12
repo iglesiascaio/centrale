@@ -56,8 +56,9 @@
 
 popup .content .plot img{
   flex: 1 1 50%;
-  max-width: 300px;
-  padding: 0px 15px;
+  max-width: 270px;
+
+  padding: 5px 15px;
 }
 
 popup .content .plot p{
@@ -87,13 +88,18 @@ popup .content .plot p{
 .pretty_container {
   border-radius: 5px;
   background-color: #f9f9f9;
+  height: 10%;
   margin: 10px;
   padding: 15px;
   position: relative;
   box-shadow: 2px 2px 2px lightgrey;
   height: 20%;
 }
+.carousel {
+  width:640px;
+  height:400px;
+}
 
-Carousel {
-  height: 20%;
+.padding {
+  padding: 20px
 }

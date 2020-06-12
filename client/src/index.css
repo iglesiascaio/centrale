@@ -50,7 +50,7 @@ section{
 
 .searchbox{
   display: block;
-  width: 100%;
+  width: 95%;
   padding: 15px;
 
   border: none;
@@ -92,4 +92,8 @@ section{
 }
 .result p{
   color: #CDCDCD;
+}
+
+.little{
+  height: 50%
 }

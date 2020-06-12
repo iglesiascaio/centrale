@@ -14,10 +14,10 @@ export default function Recommendation({films, openPopup, tried}){
 
 
   return (
-    <section className = 'pretty_container'>
+    <section >
       {(tried != 1) ? <h1>Recommendation</h1> : <h1>Most Watched</h1>}
 
-      <Carousel className="carousel">
+      <Carousel className="carousel pretty_container">
         {films.map(item => <Result key = {item.data.imdbID} result={item.data} openPopup = {openPopup} />)}
       </Carousel>
 

@@ -20,7 +20,7 @@ export default function Watched({films, openPopup}){
     <section>
       <h1>Watch Again</h1>
 
-      <Carousel>
+      <Carousel className="carousel pretty_container">
         {films.map(item => <Result key = {item.data.imdbID} result={item.data} openPopup = {openPopup} />)}
       </Carousel>
 

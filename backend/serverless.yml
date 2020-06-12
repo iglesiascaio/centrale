@@ -5,7 +5,6 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: eu-west-1
-  profile: cs-deploy-serverless
 
 functions:
   hello:
@@ -21,6 +20,15 @@ functions:
       - http:
           path: goodbye
           method: get
+
+  userRating:
+    handler: functions/userRating.handle
+    events:
+      - http:
+          path: userRating
+          method: post
+         
+
 
 custom:
   stageVars: ${file(./stage.${self:provider.stage}.yml)}
