@@ -8,7 +8,6 @@ Resources:
                   AttributeType: S
                 - AttributeName: uuid
                   AttributeType: S
-                
             KeySchema:
                 - AttributeName: type
                   KeyType: HASH
