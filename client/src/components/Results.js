@@ -5,7 +5,13 @@ import Carousel from 'react-elastic-carousel';
 function Results({results, openPopup}){
   if(results.length == 0){
     return false;
-  }else{
+  }else if(results[0] == -1){
+    return(
+    <div>
+      <h1>NOT FOUND</h1>
+    </div>)
+  }
+  else{
 
   return (
     < section className='results'>

@@ -4,16 +4,20 @@ import { Auth } from "aws-amplify";
 
 
 
-export default function Login({handleUsername, handleSubmit,handlePassword, tent}) {
+export default function Login({handleUsername, handleSignUp, handlePassword}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   function validateForm() {
-    return email.length >= 0 && password.length >= 0;
+    return email.length >= 0 && password.length >= 0 ;
   }
 
+
+
+
+
   return (
-    <div>
+    <div >
         <input
         id = "username"
         type="text"
@@ -26,11 +30,14 @@ export default function Login({handleUsername, handleSubmit,handlePassword, tent
         placeholder = "password"
         onChange = {handlePassword}
         />
-        <Button block bsSize="large" onClick = {handleSubmit} >
-          Login
+        <input
+        id = "confirmation"
+        type="password"
+        placeholder = "confirm password"
+        />
+        <Button block bsSize="large" onClick = {handleSignUp} visible ={validateForm}>
+          SignUp
           </Button>
-
-        {(tent == 1)? <p>Wrong password or Login</p> : false}
     </div>
   );
 }

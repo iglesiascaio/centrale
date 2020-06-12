@@ -2,38 +2,23 @@ import React,{useState} from "react"
 import "./Recommendation.css"
 import Carousel from 'react-elastic-carousel';
 import axios from "axios"
+import Result from "./Result.js"
 
 
 
 
-export default function Recommendation(){
-  const [recs, setRec] = useState({
-    rec: []
-  })
-
-  let films = ['Arrow', 'Flash', 'Spider-Man']
-
-  const getReco = () => {
-      const apiurl = " http://www.omdbapi.com/?apikey=10ce150d";
-      let recos = ['tt3107288','tt2193021']
-      recos.map(rec => {
-        axios.get(apiurl + "&i=" + rec).then(data =>{
-          setRec(prevState =>{
-            return {rec:[prevState.rec,data]}
-          })
-          })
-      })
-    return recs.rec
-  }
+export default function Recommendation({films, openPopup, tried}){
+  const apiurl = " http://www.omdbapi.com/?apikey=10ce150d";
+  const urlback = "https://lsrdn3h1i7.execute-api.eu-west-1.amazonaws.com/dev/"
 
 
 
   return (
-    <section>
-      <h1>Recommendation</h1>
+    <section className = 'pretty_container'>
+      {(tried != 1) ? <h1>Recommendation</h1> : <h1>Most Watched</h1>}
 
-      <Carousel>
-        {films.map(item => <div>{item}</div>)}
+      <Carousel className="carousel">
+        {films.map(item => <Result key = {item.data.imdbID} result={item.data} openPopup = {openPopup} />)}
       </Carousel>
 
 
