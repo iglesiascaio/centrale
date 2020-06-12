@@ -2,14 +2,6 @@ import React, {useState} from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage2 from "./components/HomePage2";
 import Login from "./components/Login"
-<<<<<<< HEAD
-import { useHistory } from 'react-router-dom';
-import axios from "axios"
-
-
-function App2() {
-
-=======
 import SignUp from "./components/SignUp"
 import history from "./components/history"
 import GettingStarted from "./components/GettingStarted";
@@ -19,7 +11,7 @@ import "./App2.css"
 function App2() {
 
   const urlback = "https://lsrdn3h1i7.execute-api.eu-west-1.amazonaws.com/dev/"
->>>>>>> frontend
+
 
   const [user, setUser] = useState({
     username_aux: -1,
