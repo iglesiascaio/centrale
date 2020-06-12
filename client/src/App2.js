@@ -50,6 +50,7 @@ function App2() {
           return {...prevState,username_aux:-1, username:prevState.user_aux}
         })
       }else{
+        alert("Wrong username or password")
         setUser(prevState => {
           return {...prevState, username:-1, tent: 1}
         })

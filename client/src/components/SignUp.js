@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { Auth } from "aws-amplify";
+import "./SignUp.css"
 
 
 
@@ -17,9 +18,12 @@ export default function Login({handleUsername, handleSignUp, handlePassword}) {
 
 
   return (
-    <div >
+    <body>
+    <div className = 'main'>
+    <p class = "sign" align="center">Sign up</p>
         <input
         id = "username"
+        className = "un"
         type="text"
         placeholder = "Username"
         onChange = {handleUsername}
@@ -27,17 +31,20 @@ export default function Login({handleUsername, handleSignUp, handlePassword}) {
         <input
         id = "password"
         type="password"
+        className = "pass"
         placeholder = "password"
         onChange = {handlePassword}
         />
         <input
         id = "confirmation"
+        className = "pass"
         type="password"
         placeholder = "confirm password"
         />
-        <Button block bsSize="large" onClick = {handleSignUp} visible ={validateForm}>
+        <Button className="submit" block bsSize="large" onClick = {handleSignUp} visible ={validateForm}>
           SignUp
           </Button>
     </div>
+    </body>
   );
 }
