@@ -1,32 +1,28 @@
 const uuid = require('uuid');
 const DynamoDB = require('aws-sdk/clients/dynamodb');
 
-
 module.exports.handle = async event => {
     const data = JSON.parse(event.body);
+    let username = data.username
+    let userRating = data.userRating 
 
     if (!process.env.tableName) {
         throw new Error('env.tableName must be defined');
     }
     const dynamoDb = new DynamoDB.DocumentClient();
-    let username = data.username
-    let userRating = data.userRating
 
-    var key = username
-    var obj = {}
-    obj[key] = userRating
-
-    const item = {
-        type: 'movie',
-        uuid: data.imdbId,
-        rating: obj
-
-    }
-
-    await dynamoDb.put({
-        TableName: process.env.tableName,
-        Item: item,
-    }).promise();
+    result = dynamoDB.update_item(
+        Key={
+            'type': 'movie',
+            'uuid': data.imdbId
+        },
+        UpdateExpression="SET ratings = list_append(ratings, :i)",
+        ExpressionAttributeValues={
+            ':i': [{username:userRating}],
+        },
+        ReturnValues="UPDATED_NEW"
+    )
+   
 
     return {
         statusCode: 200,
@@ -37,3 +33,4 @@ module.exports.handle = async event => {
         body: JSON.stringify(item),
     }
 }
+

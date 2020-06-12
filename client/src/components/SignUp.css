@@ -15,9 +15,9 @@ box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 
 .sign {
 padding-top: 40px;
-color: #8C55AA;
 font-family: 'Ubuntu', sans-serif;
 font-weight: bold;
+color: #00008B;
 font-size: 23px;
 }
 
@@ -75,7 +75,7 @@ border: 2px solid rgba(0, 0, 0, 0.18) !important;
 cursor: pointer;
 border-radius: 5em;
 color: #fff;
-background: linear-gradient(to right, #9C27B0, #E040FB);
+background: linear-gradient(to right, #00008B, #1E90FF);
 border: 0;
 padding-left: 40px;
 padding-right: 40px;

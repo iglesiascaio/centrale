@@ -129,6 +129,15 @@ functions:
           path: list
           method: get
 
+  userRating:
+    handler: functions/userRating.handle
+    events:
+      - http:
+          path: userRating
+          method: post
+         
+
+
 custom:
   stageVars: ${file(./stage.${self:provider.stage}.yml)}
 
