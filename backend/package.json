@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "mathjs": "^7.0.1",
+    "uuid": "^8.1.0"
+  },
   "devDependencies": {
+    "aws-sdk": "^2.691.0",
     "serverless": "^1.72.0"
   },
   "scripts": {
