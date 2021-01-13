@@ -2,7 +2,7 @@
 
 Project developed by Caio Iglesias and Matheus Jahchan in the ST4 Web Data (CentraleSupélec - 2020). 
 
-Objective: Develop a website to make the recommendation of movies to users, using algorithms that measure the similarity between different users.
+Objective: Develop a website to make recommendations of movies to users, using algorithms that measure the similarity between different users.
 
 ## Installation du projet
 
