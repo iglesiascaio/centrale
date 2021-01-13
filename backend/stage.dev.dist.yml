@@ -9,5 +9,5 @@
 # Storing secrets in the Parameter Store of AWS Systems Manager is safer and allows configuring accesses through IAM policies
 # For more infos on Secrets Manager, see: https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html
 
-groupNumber: #PUT YOUR GROUP NUMBER HERE
-myFirstname: #PUT YOUR FIRSTNAME HERE
+groupNumber: 8
+myFirstname: Caio

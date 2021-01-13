@@ -1,27 +1,31 @@
 import React from "react"
 import Rating from "react-rating"
 import { Button } from "react-bootstrap";
+import "./Popup.css"
 
-export default function Popup({selected, closePopup}){
+export default function Popup({selected, closePopup, handleRating,score}){
   return(
     <section className="popup">
       <div className = "content">
-        <h2>{selected.Title}<span>({selected.Year})</span></h2>
+        <h1>{selected.Title}<span>({selected.Year})</span></h1>
         <p className="rating"> Rating Imdb: {selected.imdbRating} </p>
         <div className="plot">
           <img src={selected.Poster}/>
           <div className = "score">
             <p> Already watched? </p>
-            <Rating initialRating = {undefined}/>
+            <Rating className = 'rating' initialRating = {score} onChange = {handleRating}/>
+
+            <h2 className = 'container'>Description: {selected.Plot}</h2>
 
           </div>
-          <p>{selected.Plot}</p>
+          
+
 
         </div>
 
-
+      <div  className = 'padding'>
         <Button className="close" onClick={closePopup}>Close</Button >
-
+        </div>
       </div>
     </section>
   )

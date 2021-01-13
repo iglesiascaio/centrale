@@ -5,7 +5,6 @@ provider:
   runtime: nodejs12.x
   stage: dev
   region: eu-west-1
-  profile: cs-deploy-serverless
 
 functions:
   hello:
@@ -15,12 +14,132 @@ functions:
           path: hello
           method: get
 
-  goodbye:
-    handler: functions/goodbye.handle
+  get:
+    handler: functions/get.handle
     events:
       - http:
-          path: goodbye
           method: get
+          path: items/{imdbId}
+
+  getRating:
+    handler: functions/getRating.handle
+    events:
+      - http:
+          method: get
+          path: getRating/{imdbId}/{username}
+          cors:
+            allowCredentials: true
+
+  getWatched:
+    handler: functions/getWatched.handle
+    events:
+      - http:
+          method: get
+          path: getWatched/{username}
+          cors:
+            allowCredentials: true
+           
+
+  create:
+    handler: functions/create.handle
+    events:
+      - http:
+          method: post
+          path: items
+          cors:
+            allowCredentials: true
+
+  list:
+    handler: functions/list.handle
+    events:
+      - http:
+          method: get
+          path: items
+          cors:
+            allowCredentials: true
+    
+  ratingsTest:
+    handler: functions/ratingsTest.handle
+    events:
+      - http:
+          path: ratingsTest/{imdbId}
+          method: post
+          cors:
+            allowCredentials: true
+  
+  createUpdate:
+    handler: functions/createUpdate.handle
+    events:
+      - http:
+          path: createUpdate/{imdbId}
+          method: post
+          cors:
+            allowCredentials: true
+
+  createUpdateUser:
+    handler: functions/createUpdateUser.handle
+    events:
+      - http:
+          path: createUpdateUser/{imdbId}
+          method: post
+          cors:
+            allowCredentials: true
+  
+  getRecommendation: 
+    handler: functions/getRecommendation.handle
+    events:
+      - http:
+          path: getRecommendation/{username}
+          method: get
+          cors:
+            allowCredentials: true
+
+  login:
+    handler: functions/login.handle
+    events:
+      - http:
+          path: login/{username}/{password}
+          method: get
+          cors:
+            allowCredentials: true
+  signup:
+    handler: functions/signup.handle
+    events:
+      - http:
+          method: post
+          path: signup/{username}/{password}
+          cors:
+            allowCredentials: true
+
+  getMostWatched:
+    handler: functions/getMostWatched.handle
+    events:
+      - http:
+          method: get
+          path: getMostWatched
+          cors:
+            allowCredentials: true
+
+         
+
+  list:
+    handler: functions/list.handle
+    events:
+      - http:
+          path: list
+          method: get
+
+  userRating:
+    handler: functions/userRating.handle
+    events:
+      - http:
+          path: userRating
+          method: post
+         
+
 
 custom:
   stageVars: ${file(./stage.${self:provider.stage}.yml)}
+
+resources:
+  - ${file(resources/dynamodb.yml)}
