@@ -1,4 +1,6 @@
-# STWeb
+# Film Recommendation Platform
+
+Project done by Caio Iglesias and Matheus Jahchan in the ST4 Web Data (CentraleSupélec - 2020) 
 
 ## Installation du projet
 
